@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		CE82DFF71E1D77520015A13B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82DFF61E1D77520015A13B /* AppDelegate.swift */; };
-		CE82DFF91E1D77520015A13B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82DFF81E1D77520015A13B /* ViewController.swift */; };
+		CE82DFF91E1D77520015A13B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82DFF81E1D77520015A13B /* SplashViewController.swift */; };
 		CE82DFFC1E1D77520015A13B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE82DFFA1E1D77520015A13B /* Main.storyboard */; };
 		CE82DFFE1E1D77520015A13B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE82DFFD1E1D77520015A13B /* Assets.xcassets */; };
 		CE82E0011E1D77520015A13B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE82DFFF1E1D77520015A13B /* LaunchScreen.storyboard */; };
 		CEA24FFE1E38F99900EDC69E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24FFD1E38F99800EDC69E /* LoginViewController.swift */; };
+		CEC5F15B1E3DDD0A00E8B6B5 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5F15A1E3DDD0A00E8B6B5 /* WebViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE82DFF31E1D77520015A13B /* ClientVkontakte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientVkontakte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE82DFF61E1D77520015A13B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE82DFF81E1D77520015A13B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE82DFF81E1D77520015A13B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		CE82DFFB1E1D77520015A13B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE82DFFD1E1D77520015A13B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE82E0001E1D77520015A13B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE82E0021E1D77520015A13B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEA24FFD1E38F99800EDC69E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CEC5F15A1E3DDD0A00E8B6B5 /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +60,9 @@
 			children = (
 				CE82DFF61E1D77520015A13B /* AppDelegate.swift */,
 				CE82DFFA1E1D77520015A13B /* Main.storyboard */,
-				CE82DFF81E1D77520015A13B /* ViewController.swift */,
+				CE82DFF81E1D77520015A13B /* SplashViewController.swift */,
 				CEA24FFD1E38F99800EDC69E /* LoginViewController.swift */,
+				CEC5F15A1E3DDD0A00E8B6B5 /* WebViewViewController.swift */,
 				CE82DFFD1E1D77520015A13B /* Assets.xcassets */,
 				CE82DFFF1E1D77520015A13B /* LaunchScreen.storyboard */,
 				CE82E0021E1D77520015A13B /* Info.plist */,
@@ -140,7 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA24FFE1E38F99900EDC69E /* LoginViewController.swift in Sources */,
-				CE82DFF91E1D77520015A13B /* ViewController.swift in Sources */,
+				CE82DFF91E1D77520015A13B /* SplashViewController.swift in Sources */,
+				CEC5F15B1E3DDD0A00E8B6B5 /* WebViewViewController.swift in Sources */,
 				CE82DFF71E1D77520015A13B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

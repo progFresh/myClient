@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Splash View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ClientVkontakte" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewControllerID" id="BYZ-38-t0r" customClass="SplashViewController" customModule="ClientVkontakte" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -51,7 +52,7 @@
                                             <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="login:" destination="0bL-Df-Gvd" eventType="touchUpInside" id="hEi-rG-5vu"/>
+                                            <segue destination="bTr-KY-HqI" kind="show" id="byR-y8-gNh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -74,6 +75,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z81-xg-Tv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="826.23688155922048"/>
+        </scene>
+        <!--Web View View Controller-->
+        <scene sceneID="LwK-BF-liy">
+            <objects>
+                <viewController id="6Ig-vB-wdv" customClass="WebViewViewController" customModule="ClientVkontakte" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CNe-Ze-kxg"/>
+                        <viewControllerLayoutGuide type="bottom" id="TQC-HF-NWU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6yC-Zy-wje">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WyN-VP-qr1">
+                                <rect key="frame" x="16" y="0.0" width="343" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3BY-G7-nJK">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WyN-VP-qr1" firstAttribute="trailing" secondItem="6yC-Zy-wje" secondAttribute="trailingMargin" id="2v7-zh-5Rw"/>
+                            <constraint firstItem="WyN-VP-qr1" firstAttribute="top" secondItem="6yC-Zy-wje" secondAttribute="topMargin" id="34G-y4-dKZ"/>
+                            <constraint firstItem="TQC-HF-NWU" firstAttribute="top" secondItem="WyN-VP-qr1" secondAttribute="bottom" constant="20" id="8Q3-eJ-aHa"/>
+                            <constraint firstItem="WyN-VP-qr1" firstAttribute="leading" secondItem="6yC-Zy-wje" secondAttribute="leadingMargin" id="RQI-8y-o8E"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1bN-Gl-ITK">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aTT-kc-1Fb">
+                            <connections>
+                                <action selector="cancelTapped:" destination="6Ig-vB-wdv" id="wBl-d7-yHg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="UNi-4l-DHS">
+                            <connections>
+                                <action selector="refreshButtonTapped:" destination="6Ig-vB-wdv" id="oXb-yI-OlI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="3BY-G7-nJK" id="rHx-Xx-ZAV"/>
+                        <outlet property="webView" destination="WyN-VP-qr1" id="tCa-Ch-SOt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vzu-aZ-Mgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1772" y="826"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oKI-SI-tLM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bTr-KY-HqI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wso-qu-j73">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Ig-vB-wdv" kind="relationship" relationship="rootViewController" id="L7x-Zt-cMd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zmB-eb-UgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984.79999999999995" y="825.33733133433293"/>
         </scene>
     </scenes>
 </document>

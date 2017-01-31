@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Locksmith
 
 class WebViewViewController: UIViewController, UIWebViewDelegate {
     
@@ -36,7 +37,6 @@ class WebViewViewController: UIViewController, UIWebViewDelegate {
             
             var token = arrayOfUrlcomponents![0]
             var userId = arrayOfUrlcomponents![2]
-            print(userId)
             
             let deleteRangeToken = token.range(of: "https://oauth.vk.com/blank.html#access_token=")
             let deleteRangeUserId = userId.range(of: "user_id=")
@@ -44,8 +44,11 @@ class WebViewViewController: UIViewController, UIWebViewDelegate {
             token.removeSubrange(deleteRangeToken!)
             userId.removeSubrange(deleteRangeUserId!)
             
+            saveTokenToKeyChain(value: token)
+            backToSplashViewController()
+            
         } else {
-            print("ne vse norm")
+            print("token is not found yet")
         }
     }
     
@@ -55,6 +58,30 @@ class WebViewViewController: UIViewController, UIWebViewDelegate {
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
+        backToSplashViewController()
+    }
+    
+    func saveTokenToKeyChain(value: String){
+        let dictionary = Locksmith.loadDataForUserAccount(userAccount: "com.Pol.s.ClientVkontakte")
+        
+        if dictionary != nil {
+            do {
+                try Locksmith.updateData(data: ["token" : value], forUserAccount: "com.Pol.s.ClientVkontakte")
+            } catch {
+                //can't reload token
+            }
+            print("token is updated")
+        } else {
+            do {
+                try Locksmith.saveData(data: ["token":  value], forUserAccount: "com.Pol.s.ClientVkontakte")
+            } catch {
+                // can't save the token to KeyChain
+            }
+            print("token is saved")
+        }
+    }
+    
+    func backToSplashViewController() {
         let theTransition = storyboard?.instantiateViewController(withIdentifier: "SplashViewControllerID")
         present(theTransition!, animated: true, completion: nil)
     }

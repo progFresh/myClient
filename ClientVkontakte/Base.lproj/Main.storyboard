@@ -92,9 +92,8 @@
                                 <rect key="frame" x="16" y="0.0" width="343" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3BY-G7-nJK">
-                                <rect key="frame" x="177" y="323" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3BY-G7-nJK">
+                                <rect key="frame" x="177" y="313.5" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -102,6 +101,8 @@
                             <constraint firstItem="WyN-VP-qr1" firstAttribute="trailing" secondItem="6yC-Zy-wje" secondAttribute="trailingMargin" id="2v7-zh-5Rw"/>
                             <constraint firstItem="WyN-VP-qr1" firstAttribute="top" secondItem="6yC-Zy-wje" secondAttribute="topMargin" id="34G-y4-dKZ"/>
                             <constraint firstItem="TQC-HF-NWU" firstAttribute="top" secondItem="WyN-VP-qr1" secondAttribute="bottom" constant="20" id="8Q3-eJ-aHa"/>
+                            <constraint firstItem="3BY-G7-nJK" firstAttribute="centerX" secondItem="WyN-VP-qr1" secondAttribute="centerX" id="8v1-0F-AxU"/>
+                            <constraint firstItem="3BY-G7-nJK" firstAttribute="centerY" secondItem="WyN-VP-qr1" secondAttribute="centerY" id="OMx-u3-BMG"/>
                             <constraint firstItem="WyN-VP-qr1" firstAttribute="leading" secondItem="6yC-Zy-wje" secondAttribute="leadingMargin" id="RQI-8y-o8E"/>
                         </constraints>
                     </view>

@@ -12,7 +12,6 @@ class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         print("privet")
         // Do any additional setup after loading the view, typically from a nib.
     }
     

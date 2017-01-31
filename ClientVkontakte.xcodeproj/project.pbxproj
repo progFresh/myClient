@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7B73412E192F165BA17B6E0 /* Pods_ClientVkontakte.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57BD7DB1199D0A924053E8AE /* Pods_ClientVkontakte.framework */; };
 		CE82DFF71E1D77520015A13B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82DFF61E1D77520015A13B /* AppDelegate.swift */; };
 		CE82DFF91E1D77520015A13B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82DFF81E1D77520015A13B /* SplashViewController.swift */; };
 		CE82DFFC1E1D77520015A13B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE82DFFA1E1D77520015A13B /* Main.storyboard */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17B642EA01B70A5303A47EF7 /* Pods-ClientVkontakte.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientVkontakte.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClientVkontakte/Pods-ClientVkontakte.release.xcconfig"; sourceTree = "<group>"; };
+		57BD7DB1199D0A924053E8AE /* Pods_ClientVkontakte.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClientVkontakte.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A06B125F1E2177B2AF51DEC4 /* Pods-ClientVkontakte.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientVkontakte.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClientVkontakte/Pods-ClientVkontakte.debug.xcconfig"; sourceTree = "<group>"; };
 		CE82DFF31E1D77520015A13B /* ClientVkontakte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientVkontakte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE82DFF61E1D77520015A13B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE82DFF81E1D77520015A13B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,7 @@
 		CE82DFFD1E1D77520015A13B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE82E0001E1D77520015A13B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE82E0021E1D77520015A13B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA17FA71E3FCADE004B983B /* ClientVkontakte.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClientVkontakte.entitlements; sourceTree = "<group>"; };
 		CEA24FFD1E38F99800EDC69E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEC5F15A1E3DDD0A00E8B6B5 /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,17 +38,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7B73412E192F165BA17B6E0 /* Pods_ClientVkontakte.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36731683248D7ACA7F1D5F9E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A06B125F1E2177B2AF51DEC4 /* Pods-ClientVkontakte.debug.xcconfig */,
+				17B642EA01B70A5303A47EF7 /* Pods-ClientVkontakte.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6E76888158972FBBEAB01A30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57BD7DB1199D0A924053E8AE /* Pods_ClientVkontakte.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE82DFEA1E1D77520015A13B = {
 			isa = PBXGroup;
 			children = (
 				CE82DFF51E1D77520015A13B /* ClientVkontakte */,
 				CE82DFF41E1D77520015A13B /* Products */,
+				36731683248D7ACA7F1D5F9E /* Pods */,
+				6E76888158972FBBEAB01A30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +83,7 @@
 		CE82DFF51E1D77520015A13B /* ClientVkontakte */ = {
 			isa = PBXGroup;
 			children = (
+				CEA17FA71E3FCADE004B983B /* ClientVkontakte.entitlements */,
 				CE82DFF61E1D77520015A13B /* AppDelegate.swift */,
 				CE82DFFA1E1D77520015A13B /* Main.storyboard */,
 				CE82DFF81E1D77520015A13B /* SplashViewController.swift */,
@@ -77,9 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE82E0051E1D77520015A13B /* Build configuration list for PBXNativeTarget "ClientVkontakte" */;
 			buildPhases = (
+				4F3C42D8B50E7A1E5DA99463 /* [CP] Check Pods Manifest.lock */,
 				CE82DFEF1E1D77520015A13B /* Sources */,
 				CE82DFF01E1D77520015A13B /* Frameworks */,
 				CE82DFF11E1D77520015A13B /* Resources */,
+				EF4B768FDCF2C3D5059F5748 /* [CP] Embed Pods Frameworks */,
+				A81897137D52FAB12DC30990 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -102,7 +131,13 @@
 				TargetAttributes = {
 					CE82DFF21E1D77520015A13B = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = QQSG7S4P3W;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -136,6 +171,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F3C42D8B50E7A1E5DA99463 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A81897137D52FAB12DC30990 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClientVkontakte/Pods-ClientVkontakte-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF4B768FDCF2C3D5059F5748 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClientVkontakte/Pods-ClientVkontakte-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE82DFEF1E1D77520015A13B /* Sources */ = {
@@ -211,7 +294,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -255,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -266,8 +349,12 @@
 		};
 		CE82E0061E1D77520015A13B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A06B125F1E2177B2AF51DEC4 /* Pods-ClientVkontakte.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClientVkontakte/ClientVkontakte.entitlements;
+				DEVELOPMENT_TEAM = QQSG7S4P3W;
 				INFOPLIST_FILE = ClientVkontakte/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -279,8 +366,12 @@
 		};
 		CE82E0071E1D77520015A13B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17B642EA01B70A5303A47EF7 /* Pods-ClientVkontakte.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClientVkontakte/ClientVkontakte.entitlements;
+				DEVELOPMENT_TEAM = QQSG7S4P3W;
 				INFOPLIST_FILE = ClientVkontakte/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

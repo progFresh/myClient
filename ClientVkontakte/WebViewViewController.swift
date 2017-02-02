@@ -19,7 +19,7 @@ class WebViewViewController: UIViewController, UIWebViewDelegate {
         
         webView.delegate = self
         
-        let authUrl = URL(string: "https://oauth.vk.com/authorize?client_id=5832945&display=mobile&redirect_uri=https://oauth.vk.com/blank.html&scope=friends,offline&response_type=token&v=5.62")
+        let authUrl = URL(string: "https://oauth.vk.com/authorize?client_id=5832945&display=mobile&redirect_uri=https://oauth.vk.com/blank.html&scope=photos,offline&response_type=token&v=5.62")
         
         webView.loadRequest(URLRequest(url: authUrl!))
     }
@@ -43,7 +43,6 @@ class WebViewViewController: UIViewController, UIWebViewDelegate {
             
             token.removeSubrange(deleteRangeToken!)
             userId.removeSubrange(deleteRangeUserId!)
-            
             saveTokenToKeyChain(value: token)
             backToSplashViewController()
             
@@ -62,9 +61,9 @@ class WebViewViewController: UIViewController, UIWebViewDelegate {
     }
     
     func saveTokenToKeyChain(value: String){
-        let dictionary = Locksmith.loadDataForUserAccount(userAccount: "com.Pol.s.ClientVkontakte")
+        let isThereToken = Locksmith.loadDataForUserAccount(userAccount: "com.Pol.s.ClientVkontakte")
         
-        if dictionary != nil {
+        if isThereToken != nil {
             do {
                 try Locksmith.updateData(data: ["token" : value], forUserAccount: "com.Pol.s.ClientVkontakte")
             } catch {

@@ -21,14 +21,29 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk_icon" translatesAutoresizingMaskIntoConstraints="NO" id="F7C-wl-rgr">
+                                <rect key="frame" x="147" y="293" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="acq-oK-pYY"/>
+                                    <constraint firstAttribute="width" constant="80" id="oAY-ij-1c2"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="F7C-wl-rgr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2Np-aa-Jof"/>
+                            <constraint firstItem="F7C-wl-rgr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eoe-N5-gMl"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="0bL-Df-Gvd" kind="presentation" identifier="ToLogin" id="lic-03-9oo"/>
+                        <segue destination="Dx2-sg-jT5" kind="presentation" identifier="ToTabBar" id="SSY-m5-9Do"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Zg8-f2-nU5">
@@ -49,14 +64,14 @@
                                         <rect key="frame" x="72" y="6" width="58" height="38"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Log in">
-                                            <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.85294117647058831" green="0.90963260380920585" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="bTr-KY-HqI" kind="show" id="byR-y8-gNh"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.0016353240705124783" green="0.41085059937553203" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="2F4-AJ-e6p" firstAttribute="top" secondItem="AjP-Ur-yQu" secondAttribute="top" constant="6" id="It7-2d-6GP"/>
                                     <constraint firstAttribute="height" constant="50" id="KVH-Rr-g61"/>
@@ -75,6 +90,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z81-xg-Tv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="826.23688155922048"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="HZu-pC-xW5">
+            <objects>
+                <tabBarController id="Dx2-sg-jT5" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Hlh-8Q-zky">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="NaJ-Ws-7gh" kind="relationship" relationship="viewControllers" id="yB8-2k-rjT"/>
+                        <segue destination="ePK-fC-TWJ" kind="relationship" relationship="viewControllers" id="phD-D3-yMZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxq-Yh-SEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="985" y="-163"/>
+        </scene>
+        <!--Information View Controller-->
+        <scene sceneID="GDr-8o-JSE">
+            <objects>
+                <viewController id="yEX-d3-IFr" customClass="InformationViewController" customModule="ClientVkontakte" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EIy-f9-zda"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rmg-Jz-dX4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M0U-Yb-v6f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="myO-De-eJE">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="7hB-N6-vS6"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z2Z-ee-Jt8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2884" y="-644.52773613193403"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="OMi-na-iNg">
+            <objects>
+                <collectionViewController id="Gts-A6-Ch5" customClass="CollectionViewController" customModule="ClientVkontakte" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Awp-Rg-FbD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="Ztg-TB-HMP">
+                            <size key="itemSize" width="120" height="120"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Nbh-V5-iiA" customClass="CollectionViewCell" customModule="ClientVkontakte" customModuleProvider="target">
+                                <rect key="frame" x="8" y="0.0" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                                <color key="backgroundColor" red="1" green="0.40706820686056377" blue="0.41529686558495826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Gts-A6-Ch5" id="vNi-fi-BpK"/>
+                            <outlet property="delegate" destination="Gts-A6-Ch5" id="ziW-8D-Oow"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="OnO-xm-r03">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="QwJ-c2-JlD"/>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yO0-D5-Xph" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2884" y="100.29985007496252"/>
         </scene>
         <!--Web View View Controller-->
         <scene sceneID="LwK-BF-liy">
@@ -145,5 +238,50 @@
             </objects>
             <point key="canvasLocation" x="984.79999999999995" y="825.33733133433293"/>
         </scene>
+        <!--information-->
+        <scene sceneID="MlS-Sg-5DT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NaJ-Ws-7gh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="information" image="home" id="tob-iC-3FS"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NII-8y-LvT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yEX-d3-IFr" kind="relationship" relationship="rootViewController" id="vl7-Kj-tq9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x0i-48-8Ri" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1944.8" y="-644.52773613193403"/>
+        </scene>
+        <!--photos-->
+        <scene sceneID="iUy-GK-Zaf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ePK-fC-TWJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="photos" image="photos" id="KNG-a2-gw6"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HXQ-n4-Kwy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gts-A6-Ch5" kind="relationship" relationship="rootViewController" id="Kd7-Yq-CjN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3pk-Ib-M2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1944.8" y="100.29985007496252"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="home" width="24" height="24"/>
+        <image name="photos" width="24" height="24"/>
+        <image name="vk_icon" width="512" height="512"/>
+    </resources>
 </document>

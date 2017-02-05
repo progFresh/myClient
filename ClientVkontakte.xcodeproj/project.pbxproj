@@ -17,6 +17,7 @@
 		CE82DFFE1E1D77520015A13B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE82DFFD1E1D77520015A13B /* Assets.xcassets */; };
 		CE82E0011E1D77520015A13B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE82DFFF1E1D77520015A13B /* LaunchScreen.storyboard */; };
 		CEA24FFE1E38F99900EDC69E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24FFD1E38F99800EDC69E /* LoginViewController.swift */; };
+		CEB9A7361E45F5BD003C70DA /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9A7351E45F5BD003C70DA /* KeyChain.swift */; };
 		CEC5F15B1E3DDD0A00E8B6B5 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5F15A1E3DDD0A00E8B6B5 /* WebViewViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		CE82E0021E1D77520015A13B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEA17FA71E3FCADE004B983B /* ClientVkontakte.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClientVkontakte.entitlements; sourceTree = "<group>"; };
 		CEA24FFD1E38F99800EDC69E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CEB9A7351E45F5BD003C70DA /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		CEC5F15A1E3DDD0A00E8B6B5 /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,16 +95,33 @@
 				CE82DFF61E1D77520015A13B /* AppDelegate.swift */,
 				CE82DFFA1E1D77520015A13B /* Main.storyboard */,
 				CE82DFF81E1D77520015A13B /* SplashViewController.swift */,
-				CEA24FFD1E38F99800EDC69E /* LoginViewController.swift */,
-				CEC5F15A1E3DDD0A00E8B6B5 /* WebViewViewController.swift */,
-				CE04EF201E43779900C7BE08 /* InformationViewController.swift */,
-				CE04EF221E43824E00C7BE08 /* CollectionViewController.swift */,
-				CE04EF241E43826200C7BE08 /* CollectionViewCell.swift */,
+				CEB9A7351E45F5BD003C70DA /* KeyChain.swift */,
+				CEA6EFDC1E43D2EF0052088D /* Authorization */,
+				CEA6EFDD1E43D30A0052088D /* Client */,
 				CE82DFFD1E1D77520015A13B /* Assets.xcassets */,
 				CE82DFFF1E1D77520015A13B /* LaunchScreen.storyboard */,
 				CE82E0021E1D77520015A13B /* Info.plist */,
 			);
 			path = ClientVkontakte;
+			sourceTree = "<group>";
+		};
+		CEA6EFDC1E43D2EF0052088D /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				CEA24FFD1E38F99800EDC69E /* LoginViewController.swift */,
+				CEC5F15A1E3DDD0A00E8B6B5 /* WebViewViewController.swift */,
+			);
+			name = Authorization;
+			sourceTree = "<group>";
+		};
+		CEA6EFDD1E43D30A0052088D /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				CE04EF201E43779900C7BE08 /* InformationViewController.swift */,
+				CE04EF221E43824E00C7BE08 /* CollectionViewController.swift */,
+				CE04EF241E43826200C7BE08 /* CollectionViewCell.swift */,
+			);
+			name = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +258,7 @@
 				CE82DFF91E1D77520015A13B /* SplashViewController.swift in Sources */,
 				CE04EF251E43826200C7BE08 /* CollectionViewCell.swift in Sources */,
 				CEC5F15B1E3DDD0A00E8B6B5 /* WebViewViewController.swift in Sources */,
+				CEB9A7361E45F5BD003C70DA /* KeyChain.swift in Sources */,
 				CE82DFF71E1D77520015A13B /* AppDelegate.swift in Sources */,
 				CE04EF211E43779900C7BE08 /* InformationViewController.swift in Sources */,
 			);

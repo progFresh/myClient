@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Locksmith
 
 class WebViewViewController: UIViewController, UIWebViewDelegate {
     
@@ -19,7 +18,7 @@ class WebViewViewController: UIViewController, UIWebViewDelegate {
         
         webView.delegate = self
         
-        let authUrl = URL(string: "https://oauth.vk.com/authorize?client_id=5832945&display=mobile&redirect_uri=https://oauth.vk.com/blank.html&scope=photos,offline&response_type=token&v=5.62")
+        let authUrl = URL(string: "https://oauth.vk.com/authorize?client_id=5832945&display=mobile&redirect_uri=https://oauth.vk.com/blank.html&scope=photos,offline&response_type=token&revoke=1&v=5.62")
         
         webView.loadRequest(URLRequest(url: authUrl!))
     }
@@ -36,14 +35,11 @@ class WebViewViewController: UIViewController, UIWebViewDelegate {
             let arrayOfUrlcomponents = currentUrl?.components(separatedBy: "&")
             
             var token = arrayOfUrlcomponents![0]
-            var userId = arrayOfUrlcomponents![2]
-            
             let deleteRangeToken = token.range(of: "https://oauth.vk.com/blank.html#access_token=")
-            let deleteRangeUserId = userId.range(of: "user_id=")
-            
             token.removeSubrange(deleteRangeToken!)
-            userId.removeSubrange(deleteRangeUserId!)
-            saveTokenToKeyChain(value: token)
+            
+            let keyChain = KeyChain()
+            keyChain.saveToken(value: token)
             backToSplashViewController()
             
         } else {
@@ -56,28 +52,8 @@ class WebViewViewController: UIViewController, UIWebViewDelegate {
         webView.reload()
     }
     
-    @IBAction func cancelTapped(_ sender: Any) {
+    @IBAction func cancelButtonTapped(_ sender: Any) {
         backToSplashViewController()
-    }
-    
-    func saveTokenToKeyChain(value: String){
-        let isThereToken = Locksmith.loadDataForUserAccount(userAccount: "com.Pol.s.ClientVkontakte")
-        
-        if isThereToken != nil {
-            do {
-                try Locksmith.updateData(data: ["token" : value], forUserAccount: "com.Pol.s.ClientVkontakte")
-            } catch {
-                //can't reload token
-            }
-            print("token is updated")
-        } else {
-            do {
-                try Locksmith.saveData(data: ["token":  value], forUserAccount: "com.Pol.s.ClientVkontakte")
-            } catch {
-                // can't save the token to KeyChain
-            }
-            print("token is saved")
-        }
     }
     
     func backToSplashViewController() {

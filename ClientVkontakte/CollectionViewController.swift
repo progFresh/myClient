@@ -14,10 +14,14 @@ class CollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Register cell classes
-      //  self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        print("privet")
     }
-
+    
+    //Bar button items
+    @IBAction func refreshButtonTapped(_ sender: Any) {
+        viewDidLoad()
+    }
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

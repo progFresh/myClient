@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Locksmith
 
 class SplashViewController: UIViewController {
 
@@ -17,10 +16,8 @@ class SplashViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let isThereToken = Locksmith.loadDataForUserAccount(userAccount: "com.Pol.s.ClientVkontakte")
-        if isThereToken != nil {
-            //check token
-            // continue to tab bar
+        let keyChain = KeyChain()
+        if keyChain.isThereToken() == true {
             delay(1.0) {
                 self.performSegue(withIdentifier: "ToTabBar", sender: nil)
             }
@@ -29,10 +26,6 @@ class SplashViewController: UIViewController {
                 self.performSegue(withIdentifier: "ToLogin", sender: nil)
             }
         }
-    }
-    
-    func checkToken () {
-        
     }
 
 }

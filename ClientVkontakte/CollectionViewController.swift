@@ -9,6 +9,7 @@
 import UIKit
 import AlamofireImage
 import Alamofire
+import SDWebImage
 
 private let reuseIdentifier = "Cell"
 
@@ -17,14 +18,14 @@ class CollectionViewController: UICollectionViewController {
     var arrayOfPhoto = [String]()
     var arrayOfLikes = [Int]()
     var arrayOfRepost = [Int]()
-    var images = [UIImage]()
+//    var images = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         arrayOfPhoto.removeAll()
         arrayOfLikes.removeAll()
         arrayOfRepost.removeAll()
-        images.removeAll()
+//        images.removeAll()
         
         collectionView?.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
         let keyChain = KeyChain()
@@ -42,18 +43,18 @@ class CollectionViewController: UICollectionViewController {
         self.backToLoginViewController()
     }
     
-    func setPhotos (settingPhotosUrl: [String]) {
-        for index in 0...(settingPhotosUrl.count-1) {
-            Alamofire.request(settingPhotosUrl[index]).responseImage { response in
-                if let image = response.result.value {
-                    self.images.append(image)
-                    DispatchQueue.main.async {
-                        self.collectionView?.reloadData()
-                    }
-                }
-            }
-        }
-    }
+//    func setPhotos (settingPhotosUrl: [String]) {
+//        for index in 0...(settingPhotosUrl.count-1) {
+//            Alamofire.request(settingPhotosUrl[index]).responseImage { response in
+//                if let image = response.result.value {
+//                    self.images.append(image)
+//                    DispatchQueue.main.async {
+//                        self.collectionView?.reloadData()
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     func backToLoginViewController() {
         let theTransition = storyboard?.instantiateViewController(withIdentifier: "LoginID")
@@ -77,7 +78,10 @@ class CollectionViewController: UICollectionViewController {
                             self.arrayOfRepost.append(reposts.value(forKey: "count") as! Int)
                         }
                     }
-                    self.setPhotos(settingPhotosUrl: self.arrayOfPhoto)
+                    DispatchQueue.main.async {
+                        self.collectionView?.reloadData()
+                        print(self.arrayOfPhoto)
+                    }
                    // print(self.arrayOfRepost.count)
                     //print(self.arrayOfLikes.count)
                     
@@ -98,12 +102,12 @@ class CollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return images.count
+        return arrayOfPhoto.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
-        cell.image.image = images[indexPath.row]
+        cell.image.sd_setImage(with: URL(string: arrayOfPhoto[indexPath.row]))
         
         return cell
     }

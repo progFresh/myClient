@@ -138,7 +138,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="myO-De-eJE">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="7hB-N6-vS6"/>
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="7hB-N6-vS6">
+                            <connections>
+                                <action selector="logoutButtonTapped:" destination="yEX-d3-IFr" id="1Tj-Jy-mhv"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="ahg-uS-72w">
                             <connections>
                                 <action selector="refreshButtonTapped:" destination="yEX-d3-IFr" id="hDk-zj-b7W"/>

@@ -8,15 +8,23 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
 class InformationViewController: UIViewController {
     
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var mainPhoto: UIImageView!
     var information = [String]()
+    var adressOfPhoto = String()
     
     @IBAction func refreshButtonTapped(_ sender: Any) {
         viewDidLoad()
+    }
+    
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        let keyChain = KeyChain()
+        keyChain.deleteToken()
+        self.backToLoginViewController()
     }
     
     override func viewDidLoad() {
@@ -37,6 +45,23 @@ class InformationViewController: UIViewController {
     func backToLoginViewController() {
         let theTransition = storyboard?.instantiateViewController(withIdentifier: "LoginID")
         present(theTransition!, animated: true, completion: nil)
+    }
+    
+    func setlabel (stringForLabel: [String]) {
+        var divideString = String()
+        for index in 0...(stringForLabel.count-1) {
+            divideString += stringForLabel[index]
+            divideString += "\n"
+        }
+        self.infoLabel.text = divideString
+    }
+    
+    func setPhoto (stringForPhoto: String) {
+        Alamofire.request(stringForPhoto).responseImage { response in
+            if let image = response.result.value {
+                self.mainPhoto.image = image
+            }
+        }
     }
     
     func fillInformationAboutUser (token: String) {
@@ -73,7 +98,12 @@ class InformationViewController: UIViewController {
                     if let instagram = dictionary.value(forKey: "instagram") as? String {
                         self.information.append("instagram: \(instagram)")
                     }
-                    print(self.information)
+                    if let photo = dictionary.value(forKey: "photo_max") as? String {
+                        self.adressOfPhoto = photo
+                    }
+                    self.setlabel(stringForLabel: self.information)
+                    self.setPhoto(stringForPhoto: self.adressOfPhoto)
+                    
                 } else {
                     print("error of token")
                     self.backToLoginViewController()

@@ -47,5 +47,14 @@ class KeyChain {
             return "Error getting token"
         }
     }
+    
+    func deleteToken() {
+        do {
+            try Locksmith.deleteDataForUserAccount(userAccount: userAccount)
+            print("token is removed")
+        } catch {
+            //
+        }
+    }
 
 }

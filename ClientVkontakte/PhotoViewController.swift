@@ -24,8 +24,6 @@ class PhotoViewController: UIViewController {
         imageView.sd_setImage(with: URL(string: via[0]))
         likeLabel.text = ("likes: \(via[1])")
         repostLabel.text = ("reposts: \(via[2])")
-        print("privet")
-        
     }
 
 }

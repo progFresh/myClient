@@ -15,7 +15,6 @@ class WebViewViewController: UIViewController, UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         webView.delegate = self
         
         let authUrl = URL(string: "https://oauth.vk.com/authorize?client_id=5832945&display=mobile&redirect_uri=https://oauth.vk.com/blank.html&scope=photos,offline&response_type=token&revoke=1&v=5.62")
@@ -33,18 +32,20 @@ class WebViewViewController: UIViewController, UIWebViewDelegate {
         let currentUrl = webView.request?.url?.absoluteString
         if currentUrl?.range(of: "access_token=") != nil {
             let arrayOfUrlcomponents = currentUrl?.components(separatedBy: "&")
-            
             var token = arrayOfUrlcomponents![0]
             let deleteRangeToken = token.range(of: "https://oauth.vk.com/blank.html#access_token=")
-            token.removeSubrange(deleteRangeToken!)
             
+            token.removeSubrange(deleteRangeToken!)
             let keyChain = KeyChain()
             keyChain.saveToken(value: token)
             backToSplashViewController()
-            
         } else {
             print("token is not found yet")
         }
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        backToSplashViewController()
     }
     
     // Bar Button Items

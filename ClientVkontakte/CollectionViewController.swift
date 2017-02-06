@@ -30,18 +30,27 @@ class CollectionViewController: UICollectionViewController {
         let keyChain = KeyChain()
         let token = keyChain.getToken()
         fillCollectionView(token: token)
-        
     }
     
-    //Bar button items
     @IBAction func refreshButtonTapped(_ sender: Any) {
         viewDidLoad()
     }
     
-    func setPhotos (settingPhotos: [String]) {
-        Alamofire.request(settingPhotos[0]).responseImage { response in
-            if let image = response.result.value {
-                self.images.append(image)
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        let keyChain = KeyChain()
+        keyChain.deleteToken()
+        self.backToLoginViewController()
+    }
+    
+    func setPhotos (settingPhotosUrl: [String]) {
+        for index in 0...(settingPhotosUrl.count-1) {
+            Alamofire.request(settingPhotosUrl[index]).responseImage { response in
+                if let image = response.result.value {
+                    self.images.append(image)
+                    DispatchQueue.main.async {
+                        self.collectionView?.reloadData()
+                    }
+                }
             }
         }
     }
@@ -68,7 +77,7 @@ class CollectionViewController: UICollectionViewController {
                             self.arrayOfRepost.append(reposts.value(forKey: "count") as! Int)
                         }
                     }
-                    self.setPhotos(settingPhotos: self.arrayOfPhoto)
+                    self.setPhotos(settingPhotosUrl: self.arrayOfPhoto)
                    // print(self.arrayOfRepost.count)
                     //print(self.arrayOfLikes.count)
                     
@@ -94,40 +103,9 @@ class CollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
-        cell.image.image = images[0]
+        cell.image.image = images[indexPath.row]
         
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
 }

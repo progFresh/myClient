@@ -162,7 +162,7 @@
         <scene sceneID="OMi-na-iNg">
             <objects>
                 <collectionViewController id="Gts-A6-Ch5" customClass="CollectionViewController" customModule="ClientVkontakte" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Awp-Rg-FbD">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Awp-Rg-FbD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -179,7 +179,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="OnO-xm-r03">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="QwJ-c2-JlD"/>
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="QwJ-c2-JlD">
+                            <connections>
+                                <action selector="logoutButtonTapped:" destination="Gts-A6-Ch5" id="Yg9-GU-jyI"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="COg-Z0-wrq">
                             <connections>
                                 <action selector="refreshButtonTapped:" destination="Gts-A6-Ch5" id="gcf-zV-WGQ"/>
@@ -224,7 +228,7 @@
                     <navigationItem key="navigationItem" id="1bN-Gl-ITK">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aTT-kc-1Fb">
                             <connections>
-                                <action selector="cancelTapped:" destination="6Ig-vB-wdv" id="wBl-d7-yHg"/>
+                                <action selector="cancelButtonTapped:" destination="6Ig-vB-wdv" id="Hee-5X-4AH"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="UNi-4l-DHS">

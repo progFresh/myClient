@@ -38,7 +38,7 @@ class InformationViewController: UIViewController {
     }
     
     func loadFromDataBase() {
-        print("poka cto net Bazi Dannih")
+        print("there's not BD")
     }
     
     func backToLoginViewController() {

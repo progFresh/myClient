@@ -94,7 +94,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="HZu-pC-xW5">
             <objects>
-                <tabBarController id="Dx2-sg-jT5" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="photos" id="Dx2-sg-jT5" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Hlh-8Q-zky">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -162,7 +162,7 @@
         <scene sceneID="OMi-na-iNg">
             <objects>
                 <collectionViewController id="Gts-A6-Ch5" customClass="CollectionViewController" customModule="ClientVkontakte" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Awp-Rg-FbD">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Awp-Rg-FbD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,10 +190,99 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="SMt-04-1zp" kind="presentation" identifier="ToOpenedPhoto" id="ALH-Si-m4b"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yO0-D5-Xph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2884" y="100.29985007496252"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="ijI-fQ-h4u">
+            <objects>
+                <viewController id="SMt-04-1zp" customClass="PhotoViewController" customModule="ClientVkontakte" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qCS-1b-Cjb"/>
+                        <viewControllerLayoutGuide type="bottom" id="POr-6i-FWx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ObQ-32-K51">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3M-u6-fvR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="rUW-2S-hck"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.72151237726211548" green="0.7216002345085144" blue="0.72148257493972778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem id="Eut-nM-oUq">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="PP8-E7-2rY">
+                                            <color key="tintColor" red="0.14005419611930847" green="0.47472602128982544" blue="0.97206348180770874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="ePK-fC-TWJ" kind="show" id="9MU-Ag-Ngc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="hZE-KN-ZYN"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rQo-U3-JPh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIx-za-gvP">
+                                <rect key="frame" x="38" y="626" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJL-PQ-VXA">
+                                <rect key="frame" x="127" y="626" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2U-KB-QML">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                                <color key="backgroundColor" red="0.73719757795333862" green="0.73728722333908081" blue="0.73716706037521362" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="IZ0-u8-ua0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I2U-KB-QML" firstAttribute="top" secondItem="ObQ-32-K51" secondAttribute="top" id="5PT-tT-R1u"/>
+                            <constraint firstItem="POr-6i-FWx" firstAttribute="top" secondItem="kJL-PQ-VXA" secondAttribute="bottom" constant="20" id="662-od-USq"/>
+                            <constraint firstAttribute="trailing" secondItem="rQo-U3-JPh" secondAttribute="trailing" id="9HN-bs-ymk"/>
+                            <constraint firstItem="rQo-U3-JPh" firstAttribute="top" secondItem="u3M-u6-fvR" secondAttribute="bottom" id="IWB-OW-1Al"/>
+                            <constraint firstItem="kJL-PQ-VXA" firstAttribute="leading" secondItem="jIx-za-gvP" secondAttribute="trailing" constant="47" id="PGM-KA-wOz"/>
+                            <constraint firstItem="POr-6i-FWx" firstAttribute="top" secondItem="rQo-U3-JPh" secondAttribute="bottom" id="QkB-sw-3E5"/>
+                            <constraint firstItem="I2U-KB-QML" firstAttribute="width" secondItem="ObQ-32-K51" secondAttribute="width" id="Vla-PK-K9Y"/>
+                            <constraint firstItem="u3M-u6-fvR" firstAttribute="top" secondItem="qCS-1b-Cjb" secondAttribute="bottom" id="b5N-vF-OSv"/>
+                            <constraint firstItem="rQo-U3-JPh" firstAttribute="leading" secondItem="ObQ-32-K51" secondAttribute="leading" id="dYV-KT-PU7"/>
+                            <constraint firstItem="u3M-u6-fvR" firstAttribute="leading" secondItem="ObQ-32-K51" secondAttribute="leading" id="fki-RD-M1D"/>
+                            <constraint firstItem="jIx-za-gvP" firstAttribute="leading" secondItem="ObQ-32-K51" secondAttribute="leadingMargin" constant="22" id="qYs-s2-pj1"/>
+                            <constraint firstItem="POr-6i-FWx" firstAttribute="top" secondItem="jIx-za-gvP" secondAttribute="bottom" constant="20" id="rh5-nP-pQQ"/>
+                            <constraint firstItem="I2U-KB-QML" firstAttribute="leading" secondItem="ObQ-32-K51" secondAttribute="leading" id="szy-I0-cMg"/>
+                            <constraint firstItem="u3M-u6-fvR" firstAttribute="width" secondItem="ObQ-32-K51" secondAttribute="width" id="vcn-AX-Tky"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="rQo-U3-JPh" id="pb6-ka-3UB"/>
+                        <outlet property="likeLabel" destination="jIx-za-gvP" id="SPN-YL-YiL"/>
+                        <outlet property="repostLabel" destination="kJL-PQ-VXA" id="sZW-sS-sgc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jaF-dC-Kxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3748" y="95.802098950524751"/>
         </scene>
         <!--Web View View Controller-->
         <scene sceneID="LwK-BF-liy">
@@ -310,4 +399,7 @@
         <image name="photos" width="24" height="24"/>
         <image name="vk_icon" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="phD-D3-yMZ"/>
+    </inferredMetricsTieBreakers>
 </document>

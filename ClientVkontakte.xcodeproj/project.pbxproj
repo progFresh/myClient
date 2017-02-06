@@ -15,6 +15,7 @@
 		CE82DFFC1E1D77520015A13B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE82DFFA1E1D77520015A13B /* Main.storyboard */; };
 		CE82DFFE1E1D77520015A13B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE82DFFD1E1D77520015A13B /* Assets.xcassets */; };
 		CE82E0011E1D77520015A13B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE82DFFF1E1D77520015A13B /* LaunchScreen.storyboard */; };
+		CE96282E1E488353001F1D2C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96282D1E488353001F1D2C /* PhotoViewController.swift */; };
 		CEA24FFE1E38F99900EDC69E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24FFD1E38F99800EDC69E /* LoginViewController.swift */; };
 		CEB9A7361E45F5BD003C70DA /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9A7351E45F5BD003C70DA /* KeyChain.swift */; };
 		CEC5F15B1E3DDD0A00E8B6B5 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5F15A1E3DDD0A00E8B6B5 /* WebViewViewController.swift */; };
@@ -35,6 +36,7 @@
 		CE82DFFD1E1D77520015A13B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE82E0001E1D77520015A13B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE82E0021E1D77520015A13B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE96282D1E488353001F1D2C /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		CEA17FA71E3FCADE004B983B /* ClientVkontakte.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClientVkontakte.entitlements; sourceTree = "<group>"; };
 		CEA24FFD1E38F99800EDC69E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEB9A7351E45F5BD003C70DA /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				CE04EF221E43824E00C7BE08 /* CollectionViewController.swift */,
 				CEE9D0F71E48295200A38FA0 /* CollectionViewCell.swift */,
 				CEE9D0F81E48295200A38FA0 /* CollectionViewCell.xib */,
+				CE96282D1E488353001F1D2C /* PhotoViewController.swift */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				CEE9D0F91E48295200A38FA0 /* CollectionViewCell.swift in Sources */,
 				CE82DFF91E1D77520015A13B /* SplashViewController.swift in Sources */,
 				CEC5F15B1E3DDD0A00E8B6B5 /* WebViewViewController.swift in Sources */,
+				CE96282E1E488353001F1D2C /* PhotoViewController.swift in Sources */,
 				CEB9A7361E45F5BD003C70DA /* KeyChain.swift in Sources */,
 				CE82DFF71E1D77520015A13B /* AppDelegate.swift in Sources */,
 				CE04EF211E43779900C7BE08 /* InformationViewController.swift in Sources */,

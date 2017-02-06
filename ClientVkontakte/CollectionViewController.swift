@@ -16,8 +16,8 @@ private let reuseIdentifier = "Cell"
 class CollectionViewController: UICollectionViewController {
     
     var arrayOfPhoto = [String]()
-    var arrayOfLikes = [Int]()
-    var arrayOfRepost = [Int]()
+    var arrayOfLikes = [String]()
+    var arrayOfRepost = [String]()
 //    var images = [UIImage]()
     
     override func viewDidLoad() {
@@ -43,19 +43,6 @@ class CollectionViewController: UICollectionViewController {
         self.backToLoginViewController()
     }
     
-//    func setPhotos (settingPhotosUrl: [String]) {
-//        for index in 0...(settingPhotosUrl.count-1) {
-//            Alamofire.request(settingPhotosUrl[index]).responseImage { response in
-//                if let image = response.result.value {
-//                    self.images.append(image)
-//                    DispatchQueue.main.async {
-//                        self.collectionView?.reloadData()
-//                    }
-//                }
-//            }
-//        }
-//    }
-    
     func backToLoginViewController() {
         let theTransition = storyboard?.instantiateViewController(withIdentifier: "LoginID")
         present(theTransition!, animated: true, completion: nil)
@@ -73,18 +60,16 @@ class CollectionViewController: UICollectionViewController {
                         if let chek = array[index].value(forKey: "photo_604") as? String {
                             self.arrayOfPhoto.append(chek)
                             let likes = array[index].value(forKey: "likes") as! NSDictionary
-                            self.arrayOfLikes.append(likes.value(forKey: "count") as! Int)
+                            let likesNumber = likes.value(forKey: "count") as! NSNumber
+                            self.arrayOfLikes.append("\(likesNumber)")
                             let reposts = array[index].value(forKey: "reposts") as! NSDictionary
-                            self.arrayOfRepost.append(reposts.value(forKey: "count") as! Int)
+                            let repostsNumber = reposts.value(forKey: "count") as! NSNumber
+                            self.arrayOfRepost.append("\(repostsNumber)")
                         }
                     }
                     DispatchQueue.main.async {
                         self.collectionView?.reloadData()
-                        print(self.arrayOfPhoto)
                     }
-                   // print(self.arrayOfRepost.count)
-                    //print(self.arrayOfLikes.count)
-                    
                 } else {
                     print("error of token")
                     self.backToLoginViewController()
@@ -96,20 +81,38 @@ class CollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return arrayOfPhoto.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
         cell.image.sd_setImage(with: URL(string: arrayOfPhoto[indexPath.row]))
-        
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        if let urlOfImage = arrayOfPhoto[indexPath.row] as? String {
+            if let likes = arrayOfLikes[indexPath.row] as? String {
+                if let reposts = arrayOfRepost[indexPath.row] as? String {
+                    let transition = [urlOfImage, likes, reposts]
+                    performSegue(withIdentifier: "ToOpenedPhoto", sender: transition)
+                }
+            }
+        }
+     
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToOpenedPhoto" {
+            
+            if let destination = segue.destination as? PhotoViewController{
+                destination.via = sender as? [String]
+            }
+        }
     }
 
 }

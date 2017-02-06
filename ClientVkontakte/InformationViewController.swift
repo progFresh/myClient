@@ -30,11 +30,10 @@ class InformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         information.removeAll()
-        
+        title = ""
         setConstraints()
         let keyChain = KeyChain()
         let token = keyChain.getToken()
-        
         fillInformationAboutUser(token: token)
     }
     
@@ -68,6 +67,7 @@ class InformationViewController: UIViewController {
         Alamofire.request("https://api.vk.com/method/users.get?fields=bdate,sex,contacts,photo_max,connections&access_token=\(token)").responseJSON { response in
             if response.error != nil {
                 self.loadFromDataBase()
+                self.title = "internet is off"
             } else if let result = response.result.value {
                 let JSON = result as! NSDictionary
                 if let arrayOfDictionary = JSON.value(forKey: "response") as? [NSDictionary]{

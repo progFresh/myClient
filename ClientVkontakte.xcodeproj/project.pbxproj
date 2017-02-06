@@ -10,7 +10,6 @@
 		C7B73412E192F165BA17B6E0 /* Pods_ClientVkontakte.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57BD7DB1199D0A924053E8AE /* Pods_ClientVkontakte.framework */; };
 		CE04EF211E43779900C7BE08 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04EF201E43779900C7BE08 /* InformationViewController.swift */; };
 		CE04EF231E43824E00C7BE08 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04EF221E43824E00C7BE08 /* CollectionViewController.swift */; };
-		CE04EF251E43826200C7BE08 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04EF241E43826200C7BE08 /* CollectionViewCell.swift */; };
 		CE82DFF71E1D77520015A13B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82DFF61E1D77520015A13B /* AppDelegate.swift */; };
 		CE82DFF91E1D77520015A13B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82DFF81E1D77520015A13B /* SplashViewController.swift */; };
 		CE82DFFC1E1D77520015A13B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE82DFFA1E1D77520015A13B /* Main.storyboard */; };
@@ -19,6 +18,8 @@
 		CEA24FFE1E38F99900EDC69E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA24FFD1E38F99800EDC69E /* LoginViewController.swift */; };
 		CEB9A7361E45F5BD003C70DA /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9A7351E45F5BD003C70DA /* KeyChain.swift */; };
 		CEC5F15B1E3DDD0A00E8B6B5 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5F15A1E3DDD0A00E8B6B5 /* WebViewViewController.swift */; };
+		CEE9D0F91E48295200A38FA0 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9D0F71E48295200A38FA0 /* CollectionViewCell.swift */; };
+		CEE9D0FA1E48295200A38FA0 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE9D0F81E48295200A38FA0 /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,6 @@
 		A06B125F1E2177B2AF51DEC4 /* Pods-ClientVkontakte.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientVkontakte.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClientVkontakte/Pods-ClientVkontakte.debug.xcconfig"; sourceTree = "<group>"; };
 		CE04EF201E43779900C7BE08 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		CE04EF221E43824E00C7BE08 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		CE04EF241E43826200C7BE08 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		CE82DFF31E1D77520015A13B /* ClientVkontakte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientVkontakte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE82DFF61E1D77520015A13B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE82DFF81E1D77520015A13B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +39,8 @@
 		CEA24FFD1E38F99800EDC69E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEB9A7351E45F5BD003C70DA /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		CEC5F15A1E3DDD0A00E8B6B5 /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		CEE9D0F71E48295200A38FA0 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		CEE9D0F81E48295200A38FA0 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +121,8 @@
 			children = (
 				CE04EF201E43779900C7BE08 /* InformationViewController.swift */,
 				CE04EF221E43824E00C7BE08 /* CollectionViewController.swift */,
-				CE04EF241E43826200C7BE08 /* CollectionViewCell.swift */,
+				CEE9D0F71E48295200A38FA0 /* CollectionViewCell.swift */,
+				CEE9D0F81E48295200A38FA0 /* CollectionViewCell.xib */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			files = (
 				CE82E0011E1D77520015A13B /* LaunchScreen.storyboard in Resources */,
 				CE82DFFE1E1D77520015A13B /* Assets.xcassets in Resources */,
+				CEE9D0FA1E48295200A38FA0 /* CollectionViewCell.xib in Resources */,
 				CE82DFFC1E1D77520015A13B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,8 +259,8 @@
 			files = (
 				CE04EF231E43824E00C7BE08 /* CollectionViewController.swift in Sources */,
 				CEA24FFE1E38F99900EDC69E /* LoginViewController.swift in Sources */,
+				CEE9D0F91E48295200A38FA0 /* CollectionViewCell.swift in Sources */,
 				CE82DFF91E1D77520015A13B /* SplashViewController.swift in Sources */,
-				CE04EF251E43826200C7BE08 /* CollectionViewCell.swift in Sources */,
 				CEC5F15B1E3DDD0A00E8B6B5 /* WebViewViewController.swift in Sources */,
 				CEB9A7361E45F5BD003C70DA /* KeyChain.swift in Sources */,
 				CE82DFF71E1D77520015A13B /* AppDelegate.swift in Sources */,

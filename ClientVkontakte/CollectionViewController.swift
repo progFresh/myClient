@@ -95,20 +95,16 @@ class CollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        if let urlOfImage = arrayOfPhoto[indexPath.row] as? String {
-            if let likes = arrayOfLikes[indexPath.row] as? String {
-                if let reposts = arrayOfRepost[indexPath.row] as? String {
-                    let transition = [urlOfImage, likes, reposts]
-                    performSegue(withIdentifier: "ToOpenedPhoto", sender: transition)
-                }
-            }
-        }
-     
+        let urlOfImage = arrayOfPhoto[indexPath.row]
+        let likes = arrayOfLikes[indexPath.row]
+        let reposts = arrayOfRepost[indexPath.row]
+        let transition = [urlOfImage, likes, reposts]
+        performSegue(withIdentifier: "ToOpenedPhoto", sender: transition)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToOpenedPhoto" {
-            
             if let destination = segue.destination as? PhotoViewController{
                 destination.via = sender as? [String]
             }
